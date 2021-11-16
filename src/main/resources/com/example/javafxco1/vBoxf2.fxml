@@ -100,7 +100,7 @@
                </effect>
             </Label>
             <Region HBox.hgrow="ALWAYS" />
-            <Button mnemonicParsing="false" text="Researcher">
+            <Button fx:id="button_Vb2Researcher" mnemonicParsing="false" onAction="#getSelectedItem" text="Researcher">
                <graphic>
                   <ImageView fitHeight="21.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>

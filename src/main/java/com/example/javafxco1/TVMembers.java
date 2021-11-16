@@ -29,6 +29,11 @@ public class TVMembers {
     public TVMembers() {
     }
 
+    public TVMembers(String id, String visa) {
+        this.Id = id;
+        this.Visa = visa;
+    }
+
     public String getId() {
         return Id;
     }

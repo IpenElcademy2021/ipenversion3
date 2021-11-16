@@ -25,20 +25,20 @@ public class vBoxf2Controller {
     @FXML
     private TableColumn tablecolumnVB2_Id, tablecolumnVB2_Visa;
     @FXML
-    private TableView<People> tableview_List;
+    private TableView<TVMembers> tableview_List;
 
     @FXML
     protected void initialize() {
         //
         //TABLEVIEW ADD DATA
         //Define data in ObservableList
-        final ObservableList<People> data = FXCollections.observableArrayList();
+        final ObservableList<TVMembers> data = FXCollections.observableArrayList();
         try {
             Connection con = DBConnect.getConnection();
             ResultSet rs = con.createStatement().executeQuery("select * from elcademy");
 
             while (rs.next()){
-                data.add(new People(rs.getString("id"),rs.getString("visa")));
+                data.add(new TVMembers(rs.getString("id"),rs.getString("visa")));
                 System.out.println(data);
             }
         } catch (SQLException ex) {
@@ -52,9 +52,17 @@ public class vBoxf2Controller {
 
         //add data to table
         tableview_List.setItems(data);
+    }
+
+    public void getSelectedItem() throws IOException {
+
+        TVMembers tvMembers = tableview_List.getSelectionModel().getSelectedItem();
+
+        System.out.println(tvMembers.getId());
 
 
     }
+
 
 
 }
