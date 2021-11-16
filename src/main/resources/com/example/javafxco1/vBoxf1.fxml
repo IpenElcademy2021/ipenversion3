@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="vbox_fragment1" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxco1.vBoxf1Controller">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <AnchorPane prefHeight="550.0" prefWidth="256.0" style="-fx-background-color: #0000FF;">
+               <children>
+                  <ImageView fitHeight="190.0" fitWidth="220.0" layoutX="14.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@information.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="570.0" prefWidth="670.0" style="-fx-background-color: #00BFFF;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="121.0" layoutX="279.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@register1.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="207.0" layoutY="65.0" text="ID" />
+                  <Label layoutX="415.0" layoutY="65.0" text="Visa" />
+                  <TextField fx:id="textfield_reg_id" layoutX="166.0" layoutY="83.0" />
+                  <TextField fx:id="textfield_reg_visa" layoutX="357.0" layoutY="84.0" />
+                  <Label layoutX="199.0" layoutY="138.0" text="Nom" />
+                  <Label layoutX="412.0" layoutY="138.0" text="Prenom" />
+                  <TextField fx:id="textfield_reg_nom" layoutX="163.0" layoutY="159.0" />
+                  <TextField fx:id="textfield_reg_prenom" layoutX="354.0" layoutY="160.0" />
+                  <Label layoutX="216.0" layoutY="204.0" text="Job" />
+                  <Label layoutX="392.0" layoutY="204.0" text="Phone Number" />
+                  <TextField fx:id="textfield_reg_job" layoutX="163.0" layoutY="222.0" />
+                  <TextField fx:id="textfield_reg_phone" layoutX="354.0" layoutY="223.0" />
+                  <Label layoutX="308.0" layoutY="262.0" text="Password" />
+                  <Button fx:id="button_update" layoutX="416.0" layoutY="347.0" mnemonicParsing="false" text="Update" />
+                  <Button fx:id="button_clear" layoutX="495.0" layoutY="347.0" mnemonicParsing="false" text="Clear" />
+                  <Button fx:id="button_register" layoutX="170.0" layoutY="347.0" mnemonicParsing="false" text="Register" />
+                  <Button fx:id="button_retrieve" layoutX="251.0" layoutY="347.0" mnemonicParsing="false" onAction="#GetRestAPI" text="Retrieve" />
+                  <PasswordField fx:id="passwordfield" layoutX="263.0" layoutY="299.0" />
+                  <Label layoutX="312.0" layoutY="385.0" text="Records" />
+                  <Button fx:id="button_remove" layoutX="328.0" layoutY="347.0" mnemonicParsing="false" text="Remove" />
+                  <TableView fx:id="tableview_registration" layoutX="15.0" layoutY="410.0" prefHeight="159.0" prefWidth="631.0">
+                     <columns>
+                        <TableColumn fx:id="tableColumn_id" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="tableColumn_visa" prefWidth="75.0" text="Visa" />
+                        <TableColumn fx:id="tableColumn_nom" prefWidth="75.0" text="Nom" />
+                        <TableColumn fx:id="tableColumn_prenom" prefWidth="75.0" text="Prenom" />
+                        <TableColumn fx:id="tableColumn_job" prefWidth="75.0" text="Job" />
+                        <TableColumn fx:id="tableColumn_password" prefWidth="75.0" text="Password" />
+                        <TableColumn fx:id="tableColumn_phone" prefWidth="140.7999267578125" text="Phone Number" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</VBox>
