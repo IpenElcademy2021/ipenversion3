@@ -36,6 +36,8 @@
                   <Label fx:id="label_visa" layoutX="630.0" layoutY="150.0" prefHeight="18.0" prefWidth="113.0" style="-fx-background-color: B6FF00;" textFill="#1a00ff" />
                   <Label fx:id="label_prenom" layoutX="630.0" layoutY="201.0" prefHeight="18.0" prefWidth="113.0" style="-fx-background-color: B6FF00;" textFill="#1a00ff" />
                   <Label fx:id="label_phone" layoutX="630.0" layoutY="258.0" prefHeight="18.0" prefWidth="113.0" style="-fx-background-color: B6FF00;" textFill="#1a00ff" />
+                  <Label layoutX="344.0" layoutY="312.0" text="Password" textFill="RED" />
+                  <Label layoutX="398.0" layoutY="312.0" prefHeight="18.0" prefWidth="114.0" style="-fx-background-color: B6FF00;" textFill="#1a00ff" />
                </children>
             </AnchorPane>
          </children>
