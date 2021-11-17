@@ -45,13 +45,13 @@
                   <TextField fx:id="textfield_reg_job" layoutX="163.0" layoutY="222.0" />
                   <TextField fx:id="textfield_reg_phone" layoutX="354.0" layoutY="223.0" />
                   <Label layoutX="308.0" layoutY="262.0" text="Password" />
-                  <Button fx:id="button_update" layoutX="416.0" layoutY="347.0" mnemonicParsing="false" text="Update" />
-                  <Button fx:id="button_clear" layoutX="495.0" layoutY="347.0" mnemonicParsing="false" text="Clear" />
-                  <Button fx:id="button_register" layoutX="170.0" layoutY="347.0" mnemonicParsing="false" text="Register" />
+                  <Button fx:id="button_update" layoutX="416.0" layoutY="347.0" mnemonicParsing="false" onAction="#PostRestAPI" text="Update" />
+                  <Button fx:id="button_clear" layoutX="495.0" layoutY="347.0" mnemonicParsing="false" onAction="#UpdateRestAPI" text="Clear" />
+                  <Button fx:id="button_register" layoutX="170.0" layoutY="347.0" mnemonicParsing="false" onAction="#PostRestAPI" text="Register" />
                   <Button fx:id="button_retrieve" layoutX="251.0" layoutY="347.0" mnemonicParsing="false" onAction="#GetRestAPI" text="Retrieve" />
                   <PasswordField fx:id="passwordfield" layoutX="263.0" layoutY="299.0" />
                   <Label layoutX="312.0" layoutY="385.0" text="Records" />
-                  <Button fx:id="button_remove" layoutX="328.0" layoutY="347.0" mnemonicParsing="false" text="Remove" />
+                  <Button fx:id="button_remove" layoutX="328.0" layoutY="347.0" mnemonicParsing="false" onAction="#DeleteRestAPI" text="Remove" />
                   <TableView fx:id="tableview_registration" layoutX="15.0" layoutY="410.0" prefHeight="159.0" prefWidth="631.0">
                      <columns>
                         <TableColumn fx:id="tableColumn_id" prefWidth="75.0" text="ID" />

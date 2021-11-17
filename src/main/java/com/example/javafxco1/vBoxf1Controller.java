@@ -4,6 +4,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
@@ -14,9 +17,14 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.IOException;
 
-public class vBoxf1Controller {
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static com.example.javafxco1.HelloController.static_Label;
+
+public class vBoxf1Controller  {
     @FXML
     private TreeView treeview_SideMenu;
     @FXML
@@ -29,13 +37,20 @@ public class vBoxf1Controller {
     private TableColumn tableColumn_id, tableColumn_job, tableColumn_nom, tableColumn_password, tableColumn_phone, tableColumn_prenom, tableColumn_visa;
     @FXML
     private TableView tableview_registration;
-
+    @FXML
+    private HelloController helloController;
+    @FXML
+    private Label label_currentstatus;
 
     @FXML
     private VBox vbox_fragment1;
 
+    Connector connector = new Connector();
 
     OkHttpClient client = new OkHttpClient();
+
+
+
 
     public void GetRestAPI(ActionEvent e) throws IOException {
         Request r = new Request.Builder()
@@ -89,17 +104,18 @@ public class vBoxf1Controller {
     }
 
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+    String responsestring = "";
 
     public void PostRestAPI(ActionEvent e) throws IOException {
 
-        String json = "'    {\\n'+\n" +
-                "'        \"visa\": \"" + textfield_reg_id.getText() + "\",\\n'+\n" +
-                "'        \"nom\": \"" + textfield_reg_id.getText() + "\",\\n'+\n" +
-                "'        \"prenom\": \"" + textfield_reg_id.getText() + "\",\\n'+\n" +
-                "'        \"job\": \"" + textfield_reg_id.getText() + "\",\\n'+\n" +
-                "'        \"password\": \"" + textfield_reg_id.getText() + "\",\\n'+\n" +
-                "'        \"phoneNumber\": \"" + textfield_reg_id.getText() + "\\n'+\n" +
-                "'    }';";
+        String json = "    {\n        \"visa\": \"" + textfield_reg_visa.getText() + "\",\n" +
+                "        \"nom\": \"" + textfield_reg_nom.getText() + "\",\n" +
+                "        \"prenom\": \"" + textfield_reg_prenom.getText() + "\",\n" +
+                "        \"job\": \"" + textfield_reg_job.getText() + "\",\n" +
+                "        \"password\": \"" + passwordfield.getText() + "\",\n" +
+                "        \"phoneNumber\": \"" + textfield_reg_phone.getText() + "\"\n" +
+                "    }";
+
 
         RequestBody body = RequestBody.create(JSON, json);
         Request request = new Request.Builder().url("http://localhost:8080/elcam/add").post(body).build();
@@ -107,21 +123,29 @@ public class vBoxf1Controller {
         System.out.println(json);
 
         try (Response response = client.newCall(request).execute()) {
-            System.out.println(response.body().string());
+            responsestring = response.body().string();
         }
-
+        static_Label.setText(responsestring);
     }
+
 
 
     public void UpdateRestAPI(ActionEvent e) throws IOException {
 
-        String json = "";
+        String json = "    {\n        \"visa\": \"" + textfield_reg_visa.getText() + "\",\n" +
+                "        \"nom\": \"" + textfield_reg_nom.getText() + "\",\n" +
+                "        \"prenom\": \"" + textfield_reg_prenom.getText() + "\",\n" +
+                "        \"job\": \"" + textfield_reg_job.getText() + "\",\n" +
+                "        \"password\": \"" + passwordfield.getText() + "\",\n" +
+                "        \"phoneNumber\": \"" + textfield_reg_phone.getText() + "\"\n" +
+                "    }";
 
         RequestBody body = RequestBody.create(JSON, json);
         Request request = new Request.Builder().url("http://localhost:8080/elcam/update/" + textfield_reg_id.getText()).put(body).build();
         try (Response response = client.newCall(request).execute()) {
-            System.out.println(response.body().string());
+            responsestring = response.body().string();
         }
+        static_Label.setText(responsestring);
     }
 
 
@@ -129,8 +153,9 @@ public class vBoxf1Controller {
 
         Request request = new Request.Builder().url("http://localhost:8080/elcam/delete/" + textfield_reg_id.getText()).delete().build();
         try (Response response = client.newCall(request).execute()) {
-            System.out.println(response.body().string());
+            responsestring = response.body().string();
         }
+        static_Label.setText(responsestring);
     }
 
 }

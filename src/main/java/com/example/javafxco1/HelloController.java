@@ -40,6 +40,13 @@ public class HelloController {
     private TableColumn tableColumn_id, tableColumn_job, tableColumn_nom, tableColumn_password, tableColumn_phone, tableColumn_prenom, tableColumn_visa;
     @FXML
     private TableView tableview_registration;
+    @FXML
+    private Label label_currentstatus;
+    public static Label static_Label;
+
+
+    @FXML
+    private Label label_CS;
 
     @FXML
     private VBox vbox_fragment1;
@@ -51,8 +58,12 @@ public class HelloController {
 
     MethodClass MC = new MethodClass();
 
+
+
+
+
     @FXML
-    protected void initialize() {
+    protected void initialize() throws IOException {
 
         //Populating TREEVIEW
         TreeItem<String> rootItem = new TreeItem<>("Files");
@@ -83,6 +94,9 @@ public class HelloController {
         treeview_SideMenu.setShowRoot(false);
         treeview_SideMenu.setRoot(rootItem);
 
+        SwitchToFragment1();
+
+        static_Label = label_currentstatus;
     }
 
 
@@ -126,6 +140,13 @@ public class HelloController {
         VBox vBoxf4 = FXMLLoader.load((getClass().getResource("vBoxf4.fxml")));
         vbox_fragment1.getChildren().setAll(vBoxf4);
     }
+
+    public void setCurrentStatusText(String currentstatustext) {
+        label_currentstatus.setText(currentstatustext);
+
+        System.out.println("DD");
+    }
+
 
     @FXML
     public void clickItem(MouseEvent event)

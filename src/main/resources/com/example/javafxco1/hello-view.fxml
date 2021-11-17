@@ -78,11 +78,16 @@
     <bottom>
         <HBox BorderPane.alignment="CENTER">
             <children>
-                <Label text="Current status :">
+                <Label fx:id="label_CS" text="Current status :">
                     <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </HBox.margin>
                 </Label>
+            <Label fx:id="label_currentstatus" textFill="RED">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
                 <Region prefHeight="26.0" prefWidth="336.0" HBox.hgrow="ALWAYS">
                     <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
