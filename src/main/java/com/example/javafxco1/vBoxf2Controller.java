@@ -2,10 +2,13 @@ package com.example.javafxco1;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -24,15 +27,19 @@ public class vBoxf2Controller {
 
     @FXML
     private TableColumn tablecolumnVB2_Id, tablecolumnVB2_Visa;
+
+    @FXML
+    private TextField textfield_NID;
     @FXML
     private TableView<TVMembers> tableview_List;
 
+    final ObservableList<TVMembers> data = FXCollections.observableArrayList();
     @FXML
     protected void initialize() {
         //
         //TABLEVIEW ADD DATA
         //Define data in ObservableList
-        final ObservableList<TVMembers> data = FXCollections.observableArrayList();
+
         try {
             Connection con = DBConnect.getConnection();
             ResultSet rs = con.createStatement().executeQuery("select * from elcademy");
@@ -52,6 +59,37 @@ public class vBoxf2Controller {
 
         //add data to table
         tableview_List.setItems(data);
+
+
+
+
+
+        FilteredList<TVMembers> filteredData = new FilteredList(this.data, (b) -> {
+            return true;
+        });
+
+        this.textfield_NID.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate((tvMembers) -> {
+                if (newValue != null && !newValue.isEmpty()) {
+                    String lowerCaseFilter = newValue.toLowerCase();
+
+
+                    if (tvMembers.getId().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                        return true;
+                    } else if (tvMembers.getVisa().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                        return true;
+                    } else {
+                        return String.valueOf(tvMembers.getVisa()).indexOf(lowerCaseFilter) != -1;
+                    }
+                } else {
+                    return true;
+                }
+            });
+        });
+        SortedList<TVMembers> sortedData = new SortedList(filteredData);
+        sortedData.comparatorProperty().bind(this.tableview_List.comparatorProperty());
+        this.tableview_List.setItems(sortedData);
+
     }
 
     public void getSelectedItem() throws IOException {

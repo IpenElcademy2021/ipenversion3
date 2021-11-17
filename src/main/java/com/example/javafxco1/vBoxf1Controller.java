@@ -22,15 +22,13 @@ public class vBoxf1Controller {
     @FXML
     ImageView image_Home, image_Office, image_User, image_Office2, image_Exit, image_UserS2 = new ImageView();
     @FXML
-    private TextField textfield_reg_id, txtf_Username;
+    private TextField textfield_reg_id, txtf_Username, textfield_reg_visa, textfield_reg_nom, textfield_reg_prenom, textfield_reg_job, textfield_reg_phone;
     @FXML
-    private PasswordField passwordfield_Password;
+    private PasswordField passwordfield;
     @FXML
     private TableColumn tableColumn_id, tableColumn_job, tableColumn_nom, tableColumn_password, tableColumn_phone, tableColumn_prenom, tableColumn_visa;
     @FXML
     private TableView tableview_registration;
-
-
 
 
     @FXML
@@ -94,7 +92,14 @@ public class vBoxf1Controller {
 
     public void PostRestAPI(ActionEvent e) throws IOException {
 
-        String json = "";
+        String json = "'    {\\n'+\n" +
+                "'        \"visa\": \"" + textfield_reg_id.getText() + "\",\\n'+\n" +
+                "'        \"nom\": \"" + textfield_reg_id.getText() + "\",\\n'+\n" +
+                "'        \"prenom\": \"" + textfield_reg_id.getText() + "\",\\n'+\n" +
+                "'        \"job\": \"" + textfield_reg_id.getText() + "\",\\n'+\n" +
+                "'        \"password\": \"" + textfield_reg_id.getText() + "\",\\n'+\n" +
+                "'        \"phoneNumber\": \"" + textfield_reg_id.getText() + "\\n'+\n" +
+                "'    }';";
 
         RequestBody body = RequestBody.create(JSON, json);
         Request request = new Request.Builder().url("http://localhost:8080/elcam/add").post(body).build();
