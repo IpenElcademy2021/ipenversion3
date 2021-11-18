@@ -49,7 +49,7 @@ public class HelloController {
     private Label label_CS;
 
     @FXML
-    private VBox vbox_fragment1;
+     VBox vbox_fragment1;
 
     //
     private Stage stage;
@@ -122,7 +122,8 @@ public class HelloController {
     }
 
     public void SwitchToFragment1() throws IOException {
-        VBox vBoxf1 = FXMLLoader.load((getClass().getResource("vBoxf1.fxml")));
+        VBox vBoxf1;
+        vBoxf1 = FXMLLoader.load((getClass().getResource("vBoxf1.fxml")));
         vbox_fragment1.getChildren().setAll(vBoxf1);
     }
 
@@ -153,7 +154,10 @@ public class HelloController {
     {
         if (event.getClickCount() == 2) //Checking double click
         {
+            String id = tableview_registration.getSelectionModel().getSelectedItem().toString();
+
             System.out.println(tableview_registration.getSelectionModel().getSelectedItem());
+
         }
     }
 

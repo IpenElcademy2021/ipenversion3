@@ -10,23 +10,18 @@ import java.io.IOException;
 
 public class HelloApplication extends Application {
 
+    static vBoxf3Controller vBoxf3Controller;
 
 
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1100, 750);
-        //Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-        //Scene scene = new Scene(root, 1100, 750);
+
         stage.setTitle("Wee Woo Wee WOo1!");
         stage.setScene(scene);
         scene.getStylesheets().add("Stylesheet.css");
         stage.show();
-
-
-
-
-
 
     }
 

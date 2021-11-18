@@ -45,7 +45,7 @@
                   <TextField fx:id="textfield_reg_job" layoutX="163.0" layoutY="222.0" />
                   <TextField fx:id="textfield_reg_phone" layoutX="354.0" layoutY="223.0" />
                   <Label layoutX="308.0" layoutY="262.0" text="Password" />
-                  <Button fx:id="button_update" layoutX="416.0" layoutY="347.0" mnemonicParsing="false" onAction="#PostRestAPI" text="Update" />
+                  <Button fx:id="button_update" layoutX="416.0" layoutY="347.0" mnemonicParsing="false" onAction="#UpdateRestAPI" text="Update" />
                   <Button fx:id="button_clear" layoutX="495.0" layoutY="347.0" mnemonicParsing="false" onAction="#UpdateRestAPI" text="Clear" />
                   <Button fx:id="button_register" layoutX="170.0" layoutY="347.0" mnemonicParsing="false" onAction="#PostRestAPI" text="Register" />
                   <Button fx:id="button_retrieve" layoutX="251.0" layoutY="347.0" mnemonicParsing="false" onAction="#GetRestAPI" text="Retrieve" />

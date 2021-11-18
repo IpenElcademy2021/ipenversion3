@@ -45,7 +45,6 @@ public class vBoxf1Controller  {
     @FXML
     private VBox vbox_fragment1;
 
-    Connector connector = new Connector();
 
     OkHttpClient client = new OkHttpClient();
 
@@ -87,7 +86,6 @@ public class vBoxf1Controller  {
             tableColumn_job.setCellValueFactory(new PropertyValueFactory<jsonObject,String>("job"));
             tableColumn_password.setCellValueFactory(new PropertyValueFactory<jsonObject,String>("password"));
             tableColumn_phone.setCellValueFactory(new PropertyValueFactory<jsonObject,String>("phoneNumber"));
-
 
 
 

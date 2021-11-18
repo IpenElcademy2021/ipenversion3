@@ -42,7 +42,7 @@
                </effect>
             </Label>
             <Region HBox.hgrow="ALWAYS" />
-            <Button fx:id="button_Vb2Researcher" mnemonicParsing="false" onAction="#getSelectedItem" text="Researcher">
+            <Button fx:id="button_Vb2Researcher" mnemonicParsing="false" onAction="#login" text="Researcher">
                <graphic>
                   <ImageView fitHeight="21.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>

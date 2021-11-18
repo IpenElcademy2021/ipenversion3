@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="1069.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxco1.vBoxf3Controller">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="15.0">
+               <children>
+                  <Label prefHeight="54.0" prefWidth="162.0" text="iPension 1st" textFill="#30a9ff">
+                     <font>
+                        <Font name="Segoe Script" size="23.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="image_Home" fitHeight="55.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@home.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="image_Office" fitHeight="56.0" fitWidth="113.0"  pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@office-building.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="image_User" fitHeight="56.0" fitWidth="56.0"  pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@user.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="image_Office2" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@office2.png" />
+                     </image></ImageView>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <ImageView fx:id="image_Exit" fitHeight="59.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@power.png" />
+                     </image></ImageView>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox spacing="10.0">
+               <children>
+                  <TextField fx:id="txtf_Username" promptText="Username" />
+                  <PasswordField fx:id="passwordfield_Password" promptText="Password" />
+                  <Region prefHeight="26.0" prefWidth="115.0" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="button_Login" mnemonicParsing="false" text="Login" />
+                  <Button layoutX="309.0" layoutY="10.0" mnemonicParsing="false"  text="Switch" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <TreeView fx:id="treeview_SideMenu" prefHeight="407.0" prefWidth="175.0" BorderPane.alignment="CENTER" />
+   </left>
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="label_CS" text="Current status :">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="label_currentstatus" textFill="RED">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Region prefHeight="26.0" prefWidth="336.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Region>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" text="Exit">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="vbox_fragment11">
+               <children>
+                  <AnchorPane prefHeight="399.0" prefWidth="778.0">
+                     <children>
+                        <ImageView fitHeight="414.0" fitWidth="778.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@back.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="86.0" fitWidth="435.0" layoutX="386.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@info.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="352.0" layoutY="152.0" text="ID" textFill="RED" />
+                        <Label fx:id="label_insVIsa" layoutX="543.0" layoutY="150.0" text="Visa" textFill="RED" />
+                        <Label layoutX="345.0" layoutY="204.0" text="Nom" textFill="RED" />
+                        <Label layoutX="543.0" layoutY="202.0" text="Prenom" textFill="RED" />
+                        <Label layoutX="349.0" layoutY="261.0" text="Job" textFill="RED" />
+                        <Label layoutX="542.0" layoutY="259.0" text="Phone Number" textFill="RED" />
+                        <Button fx:id="button_return" layoutX="630.0" layoutY="351.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="113.0" text="Return" textFill="RED" />
+                        <Label fx:id="label_id" layoutX="398.0" layoutY="152.0" prefHeight="18.0" prefWidth="113.0" style="-fx-background-color: B6FF00;" textFill="#1a00ff" />
+                        <Label fx:id="label_nom" layoutX="398.0" layoutY="201.0" prefHeight="18.0" prefWidth="113.0" style="-fx-background-color: B6FF00;" textFill="#1a00ff" />
+                        <Label fx:id="label_job" layoutX="398.0" layoutY="260.0" prefHeight="18.0" prefWidth="113.0" style="-fx-background-color: B6FF00;" textFill="#1a00ff" />
+                        <Label fx:id="label_visa" layoutX="630.0" layoutY="150.0" prefHeight="18.0" prefWidth="113.0" style="-fx-background-color: B6FF00;" textFill="#1a00ff" />
+                        <Label fx:id="label_prenom" layoutX="630.0" layoutY="201.0" prefHeight="18.0" prefWidth="113.0" style="-fx-background-color: B6FF00;" textFill="#1a00ff" />
+                        <Label fx:id="label_phone" layoutX="630.0" layoutY="258.0" prefHeight="18.0" prefWidth="113.0" style="-fx-background-color: B6FF00;" textFill="#1a00ff" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
